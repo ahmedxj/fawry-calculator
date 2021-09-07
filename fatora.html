@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <title>fawry Calculator</title>
+        <style>
+                        /*================== MAIN CSS =====================*/
+                    /* -------- devolped by "http://kareem-shahhat.me" -------- */
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+            /* start variables */
+            :root{
+                --color1: #f8c12c;
+                --color2: #303030;
+                --color3: #e6e6e6;
+                --color4: #2e2e2e;
+            }
+            /* start variables */
+            /* global rules */
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+            body{
+                background-image: linear-gradient(34deg, #c03c2fd6, #faa94b, #1f405ed6);
+                /* background-image: linear-gradient(34deg, #c03c2f, #faa94b, #1f405e); */
+                /* font-family: 'Open Sans', sans-serif; */
+                font-family: 'Roboto', sans-serif;
+            }
+            ul{
+                list-style: none;
+            }
+            a,a:hover{
+                text-decoration: none;
+            }
+            .container{
+                padding-left:15px ;
+                padding-right:15px ;
+                margin-left:auto ;
+                margin-right:auto ;
+            }
+            /* small screen */
+            @media(min-width:768px){
+                .container{
+                    width: 750px;
+                }
+            }
+            /* medium screen */
+            @media(min-width:992px){
+                .container{
+                    width: 970px;
+                }
+            }
+            /* large screen */
+            @media(min-width:1200px){
+                .container{
+                    width: 1170px;
+                }
+            }
+            .barline{
+                width: 110px;
+                height: 5px;
+                border-color: #d8a419;
+                border-width: 2px;
+                border-bottom-width: 2px;
+                border-bottom-style: solid;
+            }
+            /* ==== end global rules ====*/
+            .box1{
+                box-shadow: 9px 9px 2px 0 #1f405e;
+                margin-top: 10px;
+                background-color: #faa94b;
+                /* color: #c03c2f; */
+                color: #1f405e;
+                text-align: center;
+                padding: 20px 10px;
+                border-radius: 5px;
+                border: 2px solid #1f405e;
+            }
+            .box{
+                text-align: center;
+                justify-content: center;
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                font-family: 'Almarai', sans-serif;
+            }
+            .box2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 80vh;
+            }
+            .box .txtp{
+                box-shadow: 6px 5px 2px 0 #1f405e;
+                border-radius: 7px;
+                margin-bottom: 40px;
+                font-weight: bold;
+                padding: 20px 10px;
+                background-color: #f8c12c;
+                color: #1f405e;
+                font-size: 2rem;
+                border: 2px solid #1f405e;
+            }
+            .box a{
+                box-shadow: 6px 5px 2px 0 #1f405e;
+                border-radius: 7px;
+                margin-bottom: 40px;
+                font-weight: bold;
+                padding: 20px 10px;
+                background-color: #f8c12c;
+                color: #1f405e;
+                border: 2px solid #1f405e;
+            }
+            .box1 a{
+                color: #1f405e;
+            }
+            .box3 h3{
+                background-color: #1f405e;
+                color: #d8a419;
+                padding: 10px;
+                text-align: center;
+
+            }
+            button{
+                box-shadow: 6px 5px 2px 0 #1f405e;
+                border-radius: 7px;
+                margin-bottom: 40px;
+                font-weight: bold;
+                padding: 15px 10px;
+                background-color: #faa94b;
+                color: #1f405e;
+                border: 2px solid #1f405e;
+                width: 50%;
+                font-size: 1.5rem;
+                margin: auto;
+                transition: 0.3s;
+            }
+            button:active{
+                background-color: #1f405e;
+                color: #d8a419;
+                border: 2px solid #d8a419;
+            }
+            .calc{
+                margin-top: 30px;
+                display: none;
+                transition: 0.5s;
+            }
+            .calc h5{
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+            .calc input{
+                box-shadow: 6px 5px 2px 0 #1f405e;
+                border-radius: 7px;
+                margin-bottom: 40px;
+                font-weight: bold;
+                padding: 15px 10px;
+                background-color: #b38f2f;
+                color: #1f405e;
+                font-size: 1rem;
+                border: 2px solid #1f405e;
+                width: 70%;
+                margin: 20px auto;
+                font-family: 'Exo 2', sans-serif;
+                
+            }
+            .output{
+                box-shadow: 6px 5px 2px 0 #1f405e;
+                border-radius: 7px;
+                margin-bottom: 40px;
+                font-weight: bold;
+                padding: 15px 10px;
+                background-color: #f8c12c;
+                color: #1f405e;
+                font-size: 1.7rem;
+                border: 2px solid #1f405e;
+                width: 70%;
+                font-weight: bold;
+                margin: 20px auto;
+                font-family: 'Exo 2', sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box1">
+                <h1 class=""><a href="index.html"> Fawry Calculator</a></h1>
+            </div>
+            <div class="box2">
+                <div class="box">
+                    <input type="text" id="txtbox" class="txtp" inputmode="tel" placeholder="ادخل مبلغ الفاتوره">
+                    <button id="btn">OK</button>
+                    <div class="calc" id="calc">
+                        <h5>النسبه اللي هتدخل المكنه</h5>
+                        <!-- <input type="text" class="tx1"> -->
+                        <div class="output" id="tx1"></div>
+                        <h5>المبلغ الكلي</h5>
+                        <!-- <input type="text" > -->
+                        <div class="output" id="tx2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box3">
+                <h3>Made By Kareem</h3>
+            </div>
+        </div>
+        
+        <script>
+            
+            
+            var input1 = document.getElementById("tx1").textContent;
+            var input2 = document.getElementById("tx2").innerHTML;
+            var btn = document.getElementById("btn");
+            var show = document.getElementById("calc");
+            // var text = parseInt(price);
+            // var text ="600";
+            // text = parseInt(text);
+            btn.onclick =function(){
+                'use strict';
+                var price = document.getElementById("txtbox").value;
+                var text = parseInt(price);
+                console.log(price);
+                show.style.display = "block";
+                if (text <= 100) {
+                    text = text - 5;
+                    document.getElementById("tx1").textContent = text +" .LE";
+                    
+                }
+                else if(text >= 101 & text <= 500){
+                    text = text - 8;
+                    document.getElementById("tx1").innerHTML = text +" .LE";
+                }
+                else if(text >= 501 ){
+                    text = text - 10;
+                    document.getElementById("tx1").innerHTML = text +" .LE";
+                }
+                document.getElementById("tx2").textContent = parseInt(price) + 1 +" .LE";
+                // document.getElementById("tx1").innerHTML = price.value;
+                // console.log(text);
+            };
+            
+    
+        </script>
+    </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400&display=swap" rel="stylesheet">
+        <title>fawry Calculator</title>
+        <style>
+                        /*================== MAIN CSS =====================*/
+                    /* -------- devolped by "http://kareem-shahhat.me" -------- */
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+            /* start variables */
+            :root{
+                --color1: #f8c12c;
+                --color2: #303030;
+                --color3: #e6e6e6;
+                --color4: #2e2e2e;
+            }
+            /* start variables */
+            /* global rules */
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+            body{
+                background-image: linear-gradient(34deg, #c03c2fd6, #faa94b, #1f405ed6);
+                /* background-image: linear-gradient(34deg, #c03c2f, #faa94b, #1f405e); */
+                /* font-family: 'Open Sans', sans-serif; */
+                font-family: 'Roboto', sans-serif;
+            }
+            ul{
+                list-style: none;
+            }
+            a,a:hover{
+                text-decoration: none;
+            }
+            .container{
+                padding-left:15px ;
+                padding-right:15px ;
+                margin-left:auto ;
+                margin-right:auto ;
+            }
+            /* small screen */
+            @media(min-width:768px){
+                .container{
+                    width: 750px;
+                }
+            }
+            /* medium screen */
+            @media(min-width:992px){
+                .container{
+                    width: 970px;
+                }
+            }
+            /* large screen */
+            @media(min-width:1200px){
+                .container{
+                    width: 1170px;
+                }
+            }
+            /* ==== end global rules ====*/
+            .box1{
+                box-shadow: 9px 9px 2px 0 #1f405e;
+                margin-top: 10px;
+                background-color: #faa94b;
+                /* color: #c03c2f; */
+                color: #1f405e;
+                text-align: center;
+                padding: 20px 10px;
+                border-radius: 5px;
+                border: 2px solid #1f405e;
+            }
+            .box{
+                text-align: center;
+                justify-content: center;
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                font-family: 'Almarai', sans-serif;
+            }
+            .box2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 90vh;
+            }
+            .box1 a{
+                color: #1f405e;
+            }
+            .box a,button{
+                box-shadow: 6px 5px 2px 0 #1f405e;
+                border-radius: 7px;
+                font-size: 1.5rem;
+                margin-bottom: 40px;
+                font-weight: bold;
+                padding: 20px 10px;
+                background-color: #f8c12c;
+                color: #1f405e;
+                border: 2px solid #1f405e;
+                font-family: 'Almarai', sans-serif;
+            }
+            button:active{
+                background-color: #1f405e;
+                color: #d8a419;
+                border: 2px solid #d8a419;
+            }
+            .box3 h3{
+                background-color: #1f405e;
+                color: #d8a419;
+                padding: 10px;
+                text-align: center;
+
+            }
+            .txt{
+                box-shadow: 6px 5px 2px 0 #1f405e;
+                border-radius: 7px;
+                margin-bottom: 40px;
+                font-weight: bold;
+                padding: 15px 10px;
+                background-color: #ebb520;
+                color: #1f405e;
+                font-size: 1.6rem;
+                border: 2px solid #1f405e;
+                width: 70%;
+                margin: 20px auto;
+                font-family: 'Exo 2', sans-serif;
+                
+            }
+            .output{
+                box-shadow: 6px 5px 2px 0 #1f405e;
+                border-radius: 7px;
+                margin-bottom: 40px;
+                font-weight: bold;
+                padding: 15px 10px;
+                background-color: #f8c12c;
+                color: #1f405e;
+                font-size: 1.7rem;
+                border: 2px solid #1f405e;
+                width: 70%;
+                font-weight: bold;
+                margin: 20px auto;
+                font-family: 'Exo 2', sans-serif;
+            }
+            .txt_desa{
+                display: none;
+            }
+            .boxt1 button, .boxt2 button{
+                width: 100%;
+            }
+            #boc1 button, #boc2 button{
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box1">
+                <h1 class=""><a href="index.html">Fawry Calculator</a></h1>
+            </div>
+            <div class="box2">
+                <div class="box">
+                    <div class="boxt1" id="boxi1">
+                        <button id="btn1">هيدفع رصيد</button>
+                        <div id="boc1" class="txt_desa">
+                            <input class="txt" id="tx1" type="text" inputmode="tel" placeholder="ادخل المبلغ">
+                            <button id="btn_1">OK</button>
+                            <div id="contain1" class="txt_desa">
+                                <h3>المبلغ قبل النسبه</h3>
+                                <div id="cont1" class="output"></div>
+                                <h3>المبلغ بعد النسبه</h3>
+                                <div id="cont2" class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxt2" id="boxi2">
+                        <button id="btn2">هيدفع فلوس</button>
+                        <div id="boc2" class="txt_desa">
+                            <input class="txt" id="tx2" type="text" inputmode="tel" placeholder="ادخل المبلغ">
+                            <button id="btn_2">OK</button>
+                            <div id="contain2" class="txt_desa">
+                                <h3>الرصيد</h3>
+                                <div id="cont11" class="output"></div>
+                                <h3>المبلغ</h3>
+                                <div id="cont22" class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box3">
+                <h3>Made By Kareem</h3>
+            </div>
+        </div>
+        
+        <script>
+            var btn1 =document.getElementById("btn1");
+            var txt_box1 =document.getElementById("tx1");
+            var txt_box2 = document.getElementById("tx2");
+            var btn2 = document.getElementById("btn2");
+            var box1 = document.getElementById("boxi1");
+            var box2 = document.getElementById("boxi2");
+            var boc1 = document.getElementById("boc1");
+            var boc2 = document.getElementById("boc2");
+
+            var btn11 = document.getElementById("btn_1");
+            var btn22 = document.getElementById("btn_2");
+
+            //------------- for btn 1 --------------
+            var contain1 = document.getElementById("contain1");
+            var cont1 = document.getElementById("cont1");
+            var cont2 = document.getElementById("cont2");
+
+            //------------- for btn 2 --------------
+            var contain2 = document.getElementById("contain2");
+            var cont11 = document.getElementById("cont11");
+            var cont22 = document.getElementById("cont22");
+
+            //------------- btn 1 ------------------
+            btn1.onclick = function(){
+                boc1.classList.toggle("txt_desa");
+                box2.classList.toggle("txt_desa");
+            }
+            btn11.onclick =function(){
+                var txt=parseInt(txt_box1.value);
+                contain1.classList.toggle("txt_desa");
+                cont1.innerHTML = txt+((txt/10)*3) + " .LE";
+                cont2.innerHTML=  1+(txt+((txt/10)*3)) + " .LE";
+            }
+            //------------- btn 2 ----------------
+            btn2.onclick = function(){
+                boc2.classList.toggle("txt_desa");
+                box1.classList.toggle("txt_desa");
+            }
+            btn22.onclick =function(){
+                var txt=parseInt(txt_box2.value);
+                contain2.classList.toggle("txt_desa");
+                cont11.innerHTML = txt-((txt/10)*3) + " .LE";
+                cont22.innerHTML=  1+txt + " .LE";
+            }
+        </script>
+    </body>
+</html>
